@@ -5,7 +5,7 @@ The project helps you classify food images using Deep Convolutional Neural Netwo
 ## Getting Started
 
 The project essentially has two types of code:
-  1.  **build-model.py** trains a DCNN model using your training data and freezes it to be used in the android code.
+  1.  **build-model.py** trains a DCNN model and freezes(saves) it to be used in the android code.
   2.  **android_app/SnapSnack** is an android application that recognizes the food item when the user either clicks an image or uploads one.
   
   For building the model and just a command-line usage, **build-model.py** should be enough.
@@ -31,7 +31,17 @@ The project essentially has two types of code:
  
  This is a Python code that does the following:
  
-    1. Trains DCNN using training data
-    2. Freezes the trained model for use in Android app
-    3. Tests the model
+  1. **Prepares image data for training**  
+     Performs Histogram Equilization and White Balance on the input image data
+     The model performs better on preprocessed images as compared to raw images.  
+       
+  2. **Trains a DCNN using training data**  
+     The number of the layers in the DCNN can vary depending on various factors like size, quality and variety of training data. The best way is when you try and tweak to find the optimal number.  
+     
+  3. **Freezes the trained model for use in Android app**  
+     Freezing is simply saving the model. And what does a model comprise of? The variables and the weights along each connection when we finalize on the model which can then be directly used in applications without having to train the model in that application. This makes the target application extremely light weight
+     
+  4. **Tests the model**  
+    
+  See more about freezing models [here](https://medium.com/@prasadpal107/saving-freezing-optimizing-for-inference-restoring-of-tensorflow-models-b4146deb21b5).
  
