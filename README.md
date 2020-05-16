@@ -41,7 +41,7 @@ The project essentially has two types of code:
   3. **Freezes the trained model for use in Android app**  
      Freezing is simply saving the model. And what does a model comprise of? The variables and the weights along each connection when we finalize on the model which can then be directly used in applications without having to train the model in that application. This makes the target application extremely light weight
      
+     See more about freezing models [here](https://medium.com/@prasadpal107/saving-freezing-optimizing-for-inference-restoring-of-tensorflow-models-b4146deb21b5) and [here](https://www.tensorflow.org/guide/saved_model).
+     
   4. **Tests the model**  
-    
-  See more about freezing models [here](https://medium.com/@prasadpal107/saving-freezing-optimizing-for-inference-restoring-of-tensorflow-models-b4146deb21b5).
- 
+   
